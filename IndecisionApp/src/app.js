@@ -1,12 +1,12 @@
 console.log('App.js is running');
 
-var app = {
+let app = {
   title: 'Indecision App'
   ,subtitle: 'Help with indecision'
   ,options: ['One', 'Two']
 };
 
-var template = (
+const template = (
   <div>
     <h2>{app.title}</h2>
     {app.subtitle && <p>{app.subtitle}</p>}
@@ -17,17 +17,14 @@ var template = (
     </ol>
   </div>
 );
-//var appRoot = document.getElementById('app');
-//ReactDOM.render(template, appRoot);
-//------------------------------
 
-var user = {
+let user = {
   name: 'Carl',
   age: 47,
   location: 'Essex'
 };
-function getLocation(location) {
 
+function getLocation(location) {
   if (location != undefined) {
     return <p>Location: {location}</p>;
   } else { // Dropping the else will simply display nothing if location is null
@@ -35,7 +32,7 @@ function getLocation(location) {
   }
 };
 
-var templateTwo = (
+const templateTwo = (
   <div>
     <h1>{user.name ? user.name : 'Anonymous'}</h1>
     {(user.age && user.age >= 18) && <p>Age: {user.age + ' years old'}</p>}
@@ -43,5 +40,5 @@ var templateTwo = (
   </div>
 );
 
-var appRoot = document.getElementById('app');
+const appRoot = document.getElementById('app');
 ReactDOM.render(template, appRoot);

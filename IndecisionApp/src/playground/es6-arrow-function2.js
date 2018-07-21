@@ -1,8 +1,4 @@
-'use strict';
-
-var clog = function clog(msg) {
-  return console.log(msg);
-};
+const clog = (msg) => console.log(msg);
 // Argumnets object - no longer bound with arrow functions
 
 //const add = function (a, b) {
@@ -10,10 +6,10 @@ var clog = function clog(msg) {
 //  return a + b;
 //}
 
-var add = function add(a, b) {
+const add = (a, b) => {
   //clog(arguments);  //arguments not defined in arrow funtions
   return a + b;
-};
+}
 
 //clog('17 + 30 = ' + add(17,30,1001));
 
@@ -42,29 +38,21 @@ var add = function add(a, b) {
   }
 };*/
 
-var user = {
-  name: 'Carl',
-  cities: ['Grays', 'Dagenham'],
-  printPlacesLived: function printPlacesLived() {
-    var _this = this;
-
-    return this.cities.map(function (city) {
-      return _this.name + ' has lived in ' + city;
-    });
+const user = {
+  name: 'Carl'
+  ,cities:['Grays', 'Dagenham']
+  ,printPlacesLived() {
+    return this.cities.map((city) => this.name + ' has lived in ' + city);
   }
 };
 
 clog(user.printPlacesLived());
 
-var multiplier = {
-  numbers: [1, 2, 4],
-  multiplyBy: 2,
-  multiply: function multiply() {
-    var _this2 = this;
-
-    return this.numbers.map(function (number) {
-      return number * _this2.multiplyBy;
-    });
+const multiplier = {
+  numbers:[1, 2, 4]
+  ,multiplyBy: 2
+  ,multiply() {
+    return this.numbers.map((number) => number * this.multiplyBy);
   }
 };
 clog(multiplier.multiply());
